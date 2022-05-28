@@ -1,0 +1,46 @@
+/*FOOTER*/
+footer{
+    padding:30px;
+    width:100%;
+    margin:0;    
+    color:lighten($color: rgb(48, 47, 47), $amount: 75%); 
+    background-color:rgb(48, 47, 47);
+    padding-bottom: 15px;    
+    .logo2{
+        font-family: 'Shrikhand-Regular';
+        font-size:25px;
+        padding-bottom:10px;
+    }    
+    
+    li{
+        padding-bottom: 10px; 
+        font-size: 20px;     
+        a{
+            color:lighten($color: rgb(48, 47, 47), $amount: 75%);
+            display: flex;            
+        }
+        i{
+            padding-right:10px;                
+            width:30px;
+            font-size:16px;    
+            text-align: center;
+            position:relative;
+            top:5px;             
+            }          
+    }
+        
+    } 
+@media all and (min-width:901px){
+    footer{
+        .logo2{
+            font-size:30px;
+        }
+        li{
+            font-size:25px;
+            i{
+                font-size:20px;
+            }
+        }
+        
+    }    
+}
