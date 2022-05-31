@@ -1,0 +1,181 @@
+/*form menu*/
+.formulaire{
+    @include background;    
+    width:100%; 
+    padding: 50px 0 80px 0; 
+    
+    section{        
+        border:none;
+        margin-bottom:40px;
+        display:flex;
+        flex-direction: column;
+        padding:0;        
+        h1{
+            font-size: 20px;            
+            width:94%;
+            margin: auto;
+            margin-bottom: 20px;
+            color:lighten($color: black, $amount: 40%);            
+            &::after{
+                content: "";
+                display: block;                
+                width:50px;
+                height: 8px;                
+                border-bottom: 4px solid $color-tertiary;            
+            }
+        }                        
+    }       
+}
+.label{
+    display: flex;    
+    box-shadow: $shadow;
+    background: white;
+    height:auto;
+    line-height:24px;
+    width:94%;
+    margin:auto;
+    border-radius:20px;
+    margin-bottom: 20px;
+    font-size: large;
+    position:relative;    
+    opacity:0;
+    animation:showlabel linear 400ms forwards;
+    cursor: pointer;
+    @for $i from 0 through 3{
+        &:nth-of-type(#{$i+1}){
+            animation-delay:#{$i * 0.25}s;}
+    }
+    .descriptif{
+        padding:12px 0 12px 12px;
+        width:100%; 
+        overflow: hidden;
+        .plat{
+            margin:0;
+            padding:0;
+            font-size:18px;
+            font-weight:bold;
+            width:80%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;                 
+        }
+        .line2{
+            display: flex; 
+            justify-content: space-between;           
+            p{
+                margin:0;
+                font-size: 16px;
+                color:lighten($color: black, $amount: 40%);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;                         
+            }
+            .price{            
+                font-weight: bold;
+                color:black;  
+                padding-right:12px;   
+                font-size: 17px;                    
+            }
+        }   
+    }
+    .check{
+        background-color:$color-tertiary;
+        position: relative;            
+        width:0px;
+        flex-shrink: 0;
+        border-radius: 0 20px 20px 0; 
+        transition: width 0.4s ease-in-out; 
+        overflow: hidden;          
+        i{
+            font-size:30px;
+            color:white;
+            position: absolute;             
+            transform: rotate(0deg);   
+            line-height:74px;  
+            right:35%;
+            @media all and (max-width:379px){
+                font-size:24px;
+            }                  
+        }
+    }
+    &:hover .check{
+        width:20%;        
+    }    
+    &:hover i{
+        transform:rotate(360deg);
+        transition: transform .5s ease-in-out;
+    }
+}
+
+@keyframes showlabel{
+    0%{
+        opacity:0;
+        visibility: hidden;       
+    }
+    1%{
+        opacity:0;
+        visibility: visible;
+        transform:translateY(10px)
+    }   
+    100%{
+        opacity:1;
+        visibility: visible;
+    }
+
+}
+button[type=submit].btn{
+    @include btn;
+    border:none;        
+    display:block;  
+    outline: none;
+    &:hover{
+        transform: scale(1.1);
+        &::after{
+            opacity:1;
+        }
+    }
+    &::after{
+        @include afterbtn;
+    }        
+}     
+
+
+@media all and (min-width:780px){
+    input[type=submit].btn{
+    font-size:25px !important;
+    width:50%!important;
+    }
+}
+
+@media all and (min-width:901px){
+    .formulaire{
+        section{
+            h1{
+                font-size:25px;
+            }
+            .label{
+                width:800px;
+                margin:20px 0 0 30px;
+                .plat{
+                    font-size:20px;
+                }
+                p{
+                    font-size:20px;
+                }
+                .price{
+                    font-size:20px;
+                } 
+                .check{
+                    i{
+                        font-size:42px;
+                    }
+                }                   
+            }
+        }     
+        button[type=submit].btn{
+            width: 300px !important;
+            margin-top:70px;
+            font-size:24px;
+        }
+    }
+}

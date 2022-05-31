@@ -1,0 +1,140 @@
+/*SECTION 2*/
+.section2{
+    @include margin;
+    background-color: white;
+    &__title{
+        font-size: 30px;        
+        font-weight:bold;
+        font-family: 'robotobold';
+        margin:0 0 30px 20px
+    }
+    &__list{
+        li{
+            @include background;
+            display: flex;
+            position:relative;
+            font-size:20px;   
+            padding:30px;
+            padding-left:50px;
+            width:90%;
+            margin:auto;            
+            box-shadow: $shadow;
+            border-radius:25px;            
+            font-weight:bold;
+            height:auto;
+            margin-bottom: 30px;
+            animation: bg 3s linear 10;
+            @for $i from 0 through 3{
+                &:nth-of-type(#{$i+1}){
+                    animation-delay:#{$i}s;
+                }
+            }
+            @media all and (max-width:394px){
+                padding-left: 30px;
+                font-size:18px;
+            }            
+            span{
+                font-size:22px;
+                width:50px;                                    
+                color:grey;
+                position: relative;
+                top:3px;
+                animation: ico 3s linear 10;              
+                @media all and (max-width:394px){
+                    width: 40px;  
+                    font-size:18px;              
+                } 
+            }
+            &::before{
+                display:inline-block;
+                background-color: $color-primary;
+                color:lighten($color: $color-primary, $amount: 32%);
+                text-align:center;
+                font-size:20px;
+                line-height:28px;
+                position:absolute;
+                height:28px;
+                width:28px;
+                border-radius:50%;
+                top:50%;
+                left:-10px;
+                transform:translateY(-50%);               
+            }
+            &:nth-of-type(1)::before{
+                content: '1';
+            }
+            &:nth-of-type(2)::before{
+                content: '2';                    
+            }
+            &:nth-of-type(3)::before{
+                content:'3';                    
+            }
+          
+            }
+        }
+}
+.fa-mobile-alt{
+    animation-delay:0s!important;
+}
+.fa-list-ul{
+    animation-delay: 1s!important;
+}
+.fa-store{
+    animation-delay: 2s!important;
+}
+@keyframes bg{
+    0%{
+        background-color: $lighten-primary;
+    }
+    28%{
+        background-color: $lighten-primary;
+    }
+    29%{
+        @include background;
+    }
+    100%{
+        @include background;
+    }
+}
+@keyframes ico{
+    0%{
+        color:$color-primary;
+    }
+    28%{
+        color:$color-primary;
+    }
+    29%{
+        color:grey;
+    }
+    100%{
+        color:grey;
+    }
+}
+@media all and (min-width:600px){
+    .section2{
+        li{
+            font-size:25px; 
+            padding-left: 20%;
+            i{
+                font-size:28px;
+            }           
+        }
+    }
+}
+@media all and (min-width:780px){
+    .section2{
+        li{
+            padding-left:25%;
+        }
+    }
+}
+@media all and (min-width:901px){
+    .section2{
+        padding-bottom: 20px;
+        li{
+            width:500px;
+            padding-left:50px;
+            margin:50px;
+        }
+    }
+}

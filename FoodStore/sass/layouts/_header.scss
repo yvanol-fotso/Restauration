@@ -1,0 +1,177 @@
+/*HEADER*/
+header{
+    @include mep;
+     .logo1{
+         height:80px;
+         img{
+             padding-top:30px;
+         }                  
+     }
+     p{
+         background-color: darken($color: white, $amount: 8%);
+         margin:0;
+         height:60px;
+         line-height: 60px;
+         font-size: 18px;
+         font-weight: bold;
+         padding-right:10px;
+         box-shadow: inset -1px 5px 5px -2px rgb(185, 184, 185);
+         i{
+             width:40px;
+             text-align:left !important;
+         }
+     }
+ }
+ @media all and (min-width:780px){
+     header{
+         .logo1{
+             height:100px;
+             img{
+                 padding-top:40px;
+             }
+         }
+         p{
+             height:80px;
+             line-height:80px;
+             font-size:20px;      
+             
+         }
+     }
+ }
+ @media all and (min-width:901px){
+     header{
+         flex-direction: row;
+         justify-content: space-between;
+         background-color: darken($color: white, $amount: 8%);
+         .logo1{
+             height:200px;
+             padding-left:30px;
+             img{
+                 height:200px;
+                 width:300px;
+                 padding-top:0;
+             }
+         }
+         p{
+             box-shadow: none;
+             height:100px;
+             line-height: 100px;
+             padding-right:30px
+
+         }
+     }
+
+ }
+ 
+ /*HEADER menu*/
+ .header{
+     display: flex;
+     flex-direction: row;
+     width: 100%;
+     .logo1{
+         height:80px; 
+         width:200px;        
+         margin: auto;
+            @media all and (max-width:305px){
+                width:150px;          
+            }
+            img{
+                padding-top:30px;
+                @media all and (max-width:305px){
+                    width:150px;   
+            }            
+        }
+}     
+    .fa-arrow-left{ 
+         font-size:25px;
+         padding:30px;
+         position: absolute;
+         @media all and (max-width:305px){
+            font-size: 20px;
+            padding-left: 20px;       
+        }
+    }   
+}
+ .img{
+     width:100%;
+     position:relative;
+     margin:0;
+     height:300px;
+     img{
+         width:100%;
+         height:100%;
+         object-fit: cover;
+     }
+     figcaption{
+         font-family: 'shrikhand-regular';
+         position:relative;
+         z-index:1;
+         display:flex; 
+         justify-content: space-between;                 
+         font-size:26px;
+         font-weight:bold;
+         width:100%;
+         height:auto;
+         border-radius:30px 30px 0 0;
+         padding:30px;
+         padding-top:20px;
+         top:-81px;
+         font-style: italic;         
+         @include background;
+         @media all and (min-width:1022){
+             top:-60px;             
+         }
+         .heart{ 
+            position:relative;             
+            cursor: pointer;
+            i{
+                font-size:29px;         
+            } 
+            .far{                                
+                color:lighten($color: black, $amount: 50%);                
+            }
+            .fas{
+                @include heart;               
+                top:2px;                           
+                &:hover{
+                    background-position-y: 0;
+                }
+            }
+        }               
+     }     
+ }
+@media all and (min-width:901px){
+    .header{   
+        .fa-arrow-left{ 
+            font-size:32px;
+            padding-top:60px;
+            position: absolute;                 
+        }                
+        .logo1{
+            height:120px;
+            width:222px;
+            img{
+                height:120px;
+                width:222px;
+            }
+        }              
+    }
+    .img{
+        height:400px;        
+        figcaption{        
+            font-size:35px;
+            border-radius: 50px 50px 0 0;
+            .heart{
+                i{
+                    font-size:35px;
+                }
+                .fas{
+                    right:0px;
+                    width:35px;
+                    background-position-y: 35px;
+                    top:6px;
+                }
+            }
+        }
+    }
+}

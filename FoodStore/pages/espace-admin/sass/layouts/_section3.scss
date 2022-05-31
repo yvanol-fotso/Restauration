@@ -1,0 +1,141 @@
+/*SECTION 3*/
+.section3{
+    @include background;
+    padding-top:60px !important;    
+    &__title{
+        font-size: 30px;
+        margin-top:0;
+        margin-left:20px;
+        font-weight:bold;
+        font-family: 'robotobold';
+    }
+}
+.carte{
+    display: flex;
+    flex-direction:column;
+    width:100%;          
+    padding-top:10px !important;
+    padding-bottom:70px!important;
+  
+    figure{
+        position:relative;
+        width:90%;
+        border-radius: 20px;
+        height:300px;
+        box-shadow: $shadow;
+        margin:auto;
+        margin-bottom:50px;
+        transform:scale(1); 
+        transition:transform 250ms ease-in-out;  
+        &:hover{
+            transform: scale(0.98);
+        }       
+        img{
+            height:75%;
+            width:100%;
+            border-radius:20px 20px 0 0;
+            object-fit:cover;
+            object-position:20% 60%;
+        }
+        figcaption{
+            position:relative;
+            display:flex;
+            justify-content: space-between;
+            background-color: #ffffff;
+            width:100%;
+            height:auto;
+            padding:20px;
+            padding-top:10px;
+            border-radius:0 0 20px 20px;
+            .restolieu{
+                display:flex;
+                flex-direction: column;
+                font-size:20px;
+                p{
+                    margin:0;
+                    color:lighten($color: #000000, $amount: 30%);
+                }
+            }                          
+            .resto{
+                font-weight: bold;
+            }            
+            .heart{ 
+                position:relative;             
+                cursor: pointer;
+                top:10px;
+                right:10px;                
+                i{
+                    font-size:29px;         
+                } 
+                .far{                                
+                    color:lighten($color: black, $amount: 50%);                
+                }
+                .fas{
+                    @include heart;             
+                    &:hover{
+                        background-position-y: 0;                        
+                    }
+                }
+            }         
+            .new{
+                position:absolute;
+                background-color: $color-tertiary;
+                width:90px;
+                height:35px;
+                text-align:center;
+                border-radius:2px;
+                line-height: 2px;
+                font-weight:bold;
+                font-size:16px;
+                right:20px;
+                top:-210px;
+                color:darken($color-tertiary, 38%)                    
+            }
+        }
+    }
+    
+}
+@media all and (min-width:780px){
+    .carte{
+        figure{
+            margin-bottom:50px;
+        }
+    }
+}
+
+@media all and (min-width:901px){
+    .section3{
+        padding:30px;
+        box-shadow: inset 5px 5px 25px darken($color: white, $amount: 20%),
+            inset -5px -5px 25px darken($color: white, $amount: 20%);
+    }
+    .carte{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+        grid-gap:25px;
+        grid-auto-rows:300px; 
+        margin:0; 
+        padding-top:10px!important;      
+        a{            
+            figure{
+                display:block;
+                width:100%;
+                height:100%; 
+                img{
+                    height:70%;
+                } 
+                figcaption{
+                    height:30%;
+                    font-size:22px;
+                    .resto{
+                        font-size:25px;
+                    } 
+                    .new{
+                        top:-196px;
+                    }                   
+                }             
+                              
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+/*Mise en page*/
+@mixin mep {
+    display:flex;
+    flex-direction: column;    
+    text-align:center;
+    width:100%;    
+}
+@mixin margin{
+    margin-bottom: 70px;
+}
+@mixin shadow{
+    box-shadow: inset -1px 5px 5px -2px rgb(185, 184, 185);
+}
+@mixin background{
+    background-color:darken($color: white, $amount: 3%);
+}
+@mixin btn{
+    color:lighten($color: $color-secondary, $amount: 30%);
+    font-size:20px;
+    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+    box-shadow: $shadow;
+    border-radius: 40px;
+    cursor:pointer;
+    width:60%;
+    margin: auto;         
+    height: auto;   
+    padding: 18px;    
+    position:relative;
+    z-index:1;
+    transform:scale(1); 
+    transition:transform 500ms ease-in-out;       
+}
+@mixin afterbtn{
+    content: "";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0; 
+    right:0;           
+    opacity:0;
+    z-index:-1;
+    border-radius: 40px;
+    transition:opacity 500ms ease-in-out ;
+    background:linear-gradient(to bottom right, lighten($color-secondary, 5%), lighten($color-primary, 5%));
+    box-shadow: 0px 10px 18px 10px rgba(189,189,189,1);
+}
+@mixin heart{
+    position:absolute;
+    color:transparent;
+    width:30px;  
+    right:-1px;                                  
+    transition:all 250ms linear;
+    background:$color-primary;
+    background:linear-gradient(0deg, darken($color: white, $amount: 3%) 0%,
+                darken($color: white, $amount: 3%) 49%,
+                $color-secondary 50%, $color-primary 100%);
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    background-position-y:29px;
+    background-clip: text;   
+}
+            
+

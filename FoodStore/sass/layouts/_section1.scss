@@ -1,0 +1,60 @@
+/*SECTION 1*/
+.section1{
+    @include mep; 
+    padding:40px 0 80px 0; 
+    @include margin;
+    @include background;     
+    &__label{
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom:20px !important;
+        width:80%;
+        margin:auto;
+        font-family: 'robotobold';
+    }
+    p{
+        font-size: x-large;
+        width: 90%;
+        margin:auto;  
+        color:lighten($color: #000000, $amount: 30%);     
+    }
+    .btn{
+        @include btn;
+        margin-top: 40px;
+        position:relative;
+        z-index:1;
+        transform:scale(1); 
+        transition:transform 500ms ease-in-out;
+        @media all and (max-width:428px){
+            font-size:16px;
+            padding:16px;
+        }     
+        &:hover{
+            transform:scale(1.1);
+            &::after{ 
+            opacity: 1;
+            }
+        }
+        &::after{
+            @include afterbtn;
+        }
+        }
+        
+}
+@media all and (min-width:780px){
+    .section1{
+        padding-top:60px;
+        .btn{
+            font-size:25px;
+            width:50%;
+        }
+    }
+}
+@media all and (min-width:901px){
+    .section1{
+        @include shadow;
+        .btn{
+            width:400px;
+        }
+    }
+}

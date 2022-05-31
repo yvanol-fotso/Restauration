@@ -1,0 +1,25 @@
+/*body*/
+body{
+    width:100%;
+    margin:0;
+    font-family: 'Robotoregular';
+}
+*{
+    box-sizing: border-box;     
+}
+* a{ 
+    text-decoration: none;
+    color: #000000; 
+}
+* li{
+    list-style: none;
+}
+* ul, * ol{
+    padding:0;
+}
+@media all and (min-width:1022px){
+    body{
+        width:85%;
+        margin:auto;
+    }
+}
