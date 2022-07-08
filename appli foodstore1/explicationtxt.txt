@@ -1,0 +1,9 @@
+1- importer le fichier codeFinalDb.sql dans le sgbd mysql
+2 dans la table admins creer un administrateur du nom:admin ou autre , mail: admin@demo.com . password:admin
+
+et le tout est jouer:
+
+vous pouver maintenant naviguer sur toute l'espace adminisatrateur :ajouter des resto,lister les resto,supprimer les resto se deconnecter/detruire sa session
+
+
+RQ: sa n'accepte que les image donc l'extension est .png ou .gif . le jpg et jpeg ne waka pas et je ne sais pourquoi
